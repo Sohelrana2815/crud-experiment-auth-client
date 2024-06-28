@@ -12,8 +12,8 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    const newUser = { name, email, password };
-    console.log(newUser);
+    // const newUser = { name, email, password };
+    // console.log(newUser);
 
     createUser(email, password)
       .then((result) => {
@@ -24,9 +24,9 @@ const Register = () => {
 
           axios.post("http://localhost:5000/users", newUser).then((data) => {
             if (data.data) {
-              console.log(data.data);
+              // console.log(data.data);
               alert("new user created!");
-              console.log(result.user);
+              // console.log(result.user);
             }
           });
         }

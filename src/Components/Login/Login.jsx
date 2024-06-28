@@ -10,8 +10,8 @@ const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const loginUser = { email, password };
-    console.log(loginUser);
+    // const loginUser = { email, password };
+    // console.log(loginUser);
 
     signInUser(email, password)
       .then((result) => {
@@ -19,13 +19,13 @@ const Login = () => {
           const lastLoggedIn = result.user?.metadata?.lastSignInTime;
           const loginUser = { email, lastLoggedIn: lastLoggedIn };
 
-          console.log(result.user);
+          // console.log(result.user);
           alert("user logged in!");
           axios
             .patch("http://localhost:5000/users", loginUser)
 
-            .then((data) => {
-              console.log(data.data);
+            .then(() => {
+              // console.log(data.data);
             });
         }
       })

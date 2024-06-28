@@ -5,12 +5,12 @@ import Swal from "sweetalert2";
 
 const Users = () => {
   const loadedUsers = useLoaderData();
-  console.log(loadedUsers);
+  // console.log(loadedUsers);
 
   const [users, setUsers] = useState(loadedUsers);
 
   const handleDelete = (id) => {
-    console.log(id);
+    // console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -21,8 +21,8 @@ const Users = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/users/${id}`, id).then((data) => {
-          console.log(data.data);
+        axios.delete(`http://localhost:5000/users/${id}`, id).then(() => {
+          // console.log(data.data);
         });
         Swal.fire({
           title: "Deleted!",

@@ -8,6 +8,7 @@ import Register from "./Components/Register/Register.jsx";
 import AuthProvider from "./Components/Providers/AuthProvider.jsx";
 import Users from "./Components/Users/Users.jsx";
 import Login from "./Components/Login/Login.jsx";
+import AddCoffee from "./Components/AddCoffee/AddCoffee.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,9 +29,13 @@ const router = createBrowserRouter([
         loader: () => fetch("http://localhost:5000/users"),
       },
       {
-        path:'/login',
-        element:<Login></Login>
-      }
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/addCoffee",
+        element: <AddCoffee></AddCoffee>,
+      },
     ],
   },
 ]);
